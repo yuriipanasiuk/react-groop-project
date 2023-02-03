@@ -6,7 +6,8 @@ import { GiFilmStrip } from 'react-icons/gi';
 export const StyledLink = styled(NavLink)`
   text-decoration: none;
   color: ${p => p.theme.colors.white};
-  font-size: ${p => p.theme.fontSizes.xl};
+  font-size: 12px;
+  text-transform: uppercase;
   &.active {
     color: ${p => p.theme.colors.orange};
     text-decoration: underline;
@@ -34,8 +35,9 @@ export const LogoIcon = styled(GiFilmStrip)`
 
 export const Layout = styled.div`
   height: 216px;
-  background: url(${bgImage});
+  background-image: url(${bgImage});
   background-repeat: no-repeat;
+  background-size: cover;
   background-color: ${p => p.theme.colors.headerBgColor};
 `;
 

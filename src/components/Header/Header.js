@@ -5,7 +5,7 @@ import { StyledLink, Layout, LogoIcon, Logo, Container } from './Header.styled';
 
 const navItems = [
   { href: '/home', text: 'Home' },
-  { href: '/library', text: 'Library' },
+  { href: '/library', text: 'my library' },
 ];
 
 const Header = () => {

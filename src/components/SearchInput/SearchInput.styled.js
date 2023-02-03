@@ -18,6 +18,7 @@ export const StyledFiels = styled(Field)`
   outline: none;
   border-bottom: 0.5px solid white;
   color: white;
+  font-size: 14px;
 
   ::placeholder {
     color: #ffffff;
