@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-
 import movieGenres from '../../utils/genresItems.json';
 import Box from 'components/Box';
 
