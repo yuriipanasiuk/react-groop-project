@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-groop-project/static/css/main.3c0c9886.css",
-    "main.js": "/react-groop-project/static/js/main.5017e206.js",
+    "main.js": "/react-groop-project/static/js/main.9fb47d3f.js",
     "static/media/headerBgImg.jpg": "/react-groop-project/static/media/headerBgImg.9685608150abda1d0e8a.jpg",
     "index.html": "/react-groop-project/index.html",
     "main.3c0c9886.css.map": "/react-groop-project/static/css/main.3c0c9886.css.map",
-    "main.5017e206.js.map": "/react-groop-project/static/js/main.5017e206.js.map"
+    "main.9fb47d3f.js.map": "/react-groop-project/static/js/main.9fb47d3f.js.map"
   },
   "entrypoints": [
     "static/css/main.3c0c9886.css",
-    "static/js/main.5017e206.js"
+    "static/js/main.9fb47d3f.js"
   ]
 }
