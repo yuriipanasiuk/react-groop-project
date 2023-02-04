@@ -1,5 +1,4 @@
 import Box from 'components/Box';
-import { useState } from 'react';
 
 import {
   StyledLink,
