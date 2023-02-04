@@ -11,3 +11,22 @@ export const getTrendingMovie = async () => {
   });
   return data.results;
 };
+
+export const getMoviedetails = async id => {
+  const { data } = await axios(`/movie/${id}`, {
+    params: {
+      api_key: API_KEY,
+    },
+  });
+  return data;
+};
+
+export const searchMovie = async query => {
+  const { data } = await axios('/search/movie', {
+    params: {
+      api_key: API_KEY,
+      query,
+    },
+  });
+  return data.results;
+};

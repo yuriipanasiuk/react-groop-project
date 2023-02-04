@@ -1,8 +1,12 @@
+import Header from 'components/MyLibraryHeader';
+import Footer from 'components/Footer';
+
 const Library = () => {
   return (
-    <>
-      <p>library home</p>
-    </>
+    <div>
+      <Header />
+      <Footer />
+    </div>
   );
 };
 

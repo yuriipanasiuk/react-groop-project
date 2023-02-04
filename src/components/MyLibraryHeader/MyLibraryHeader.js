@@ -1,7 +1,14 @@
 import Box from 'components/Box';
-import SearchInput from '../SearchInput';
+import { useState } from 'react';
 
-import { StyledLink, Layout, LogoIcon, Logo, Container } from './Header.styled';
+import {
+  StyledLink,
+  Layout,
+  LogoIcon,
+  Logo,
+  Container,
+  Button,
+} from './MyLibraryHeaderstyled';
 
 const navItems = [
   { href: '/home', text: 'Home' },
@@ -9,9 +16,10 @@ const navItems = [
 ];
 
 const Header = () => {
-  const handleSubmit = data => {
-    console.log(data);
-  };
+  // const [color, setColor] = useState();
+  // const handleClick = () => {
+  //   setColor('orange');
+  // };
 
   return (
     <Layout>
@@ -31,7 +39,11 @@ const Header = () => {
               ))}
             </Box>
           </Box>
-          <SearchInput onSubmit={handleSubmit} />
+        </Box>
+
+        <Box display="flex" justifyContent="center">
+          <Button type="button">Watched</Button>
+          <Button type="button">queue</Button>
         </Box>
       </Container>
     </Layout>

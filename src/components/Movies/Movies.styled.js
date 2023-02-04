@@ -19,15 +19,3 @@ export const List = styled.ul`
   justify-items: center;
   list-style: none;
 `;
-
-export const Item = styled.li`
-  padding-bottom: 12px;
-
-  transition: scale 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
-
-  :hover {
-    scale: 1.02;
-    box-shadow: 10px 7px 13px -6px rgb(255 107 8 / 72%);
-    border-radius: 5px;
-  }
-`;
