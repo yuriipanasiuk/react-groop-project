@@ -1,9 +1,9 @@
 import MovieCard from 'components/MovieCard';
-import { Container, List } from './Movies.styled';
+import { List } from './Movies.styled';
 
 const Movies = ({ items }) => {
   return (
-    <Container>
+    <>
       <List>
         {items.map(({ id, poster_path, title, release_date, genre_ids }) => (
           <MovieCard
@@ -16,7 +16,7 @@ const Movies = ({ items }) => {
           />
         ))}
       </List>
-    </Container>
+    </>
   );
 };
 

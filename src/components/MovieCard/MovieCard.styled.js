@@ -47,6 +47,8 @@ export const Item = styled.li`
 
 export const ModalImage = styled.img`
   margin-right: 16px;
+  height: 478px;
+  border-radius: 5px;
 `;
 
 export const ModalFilmTitle = styled.h2`
@@ -58,14 +60,14 @@ export const ModalFilmTitle = styled.h2`
   text-transform: uppercase;
 `;
 
-export const VoteTitle = styled.span`
+export const Title = styled.span`
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
   color: #8c8c8c;
 `;
 
-export const VoteAvarageText = styled.span`
+export const AvarageText = styled.span`
   font-weight: 500;
   font-size: 12px;
   line-height: 1.17;
@@ -73,7 +75,7 @@ export const VoteAvarageText = styled.span`
   border-radius: 5px;
 `;
 
-export const VoteCountText = styled.span`
+export const Text = styled.span`
   font-weight: 500;
   font-size: 12px;
   line-height: 1.17;

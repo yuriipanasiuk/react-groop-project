@@ -1,4 +1,5 @@
 import Box from 'components/Box';
+import Button from 'components/Button';
 
 import {
   StyledLink,
@@ -6,7 +7,7 @@ import {
   LogoIcon,
   Logo,
   Container,
-  Button,
+  // Button,
 } from './MyLibraryHeaderstyled';
 
 const navItems = [
@@ -41,8 +42,8 @@ const Header = () => {
         </Box>
 
         <Box display="flex" justifyContent="center">
-          <Button type="button">Watched</Button>
-          <Button type="button">queue</Button>
+          <Button color="#ffffff">Watched</Button>
+          <Button color="#ffffff">queue</Button>
         </Box>
       </Container>
     </Layout>

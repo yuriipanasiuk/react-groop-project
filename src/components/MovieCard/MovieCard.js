@@ -1,5 +1,9 @@
+import { useState } from 'react';
+
 import movieGenres from '../../utils/genresItems.json';
 import Box from 'components/Box';
+import Modal from 'components/Modal';
+import Button from 'components/Button';
 import {
   Image,
   Span,
@@ -9,18 +13,16 @@ import {
   Item,
   ModalImage,
   ModalFilmTitle,
-  VoteTitle,
+  Title,
   List,
   AboutText,
   AboutTitle,
-  VoteAvarageText,
-  VoteCountText,
+  AvarageText,
+  Text,
   ModalItem,
 } from 'components/MovieCard/MovieCard.styled';
-import Modal from 'components/Modal';
 
 import { getMoviedetails } from 'ApiService/ApiService';
-import { useState } from 'react';
 
 const baseImageUrl = 'https://image.tmdb.org/t/p/w400';
 
@@ -58,21 +60,31 @@ const MovieCard = ({ img, title, release, genre, id }) => {
   return (
     <Item>
       <Image
-        src={`${baseImageUrl}${img}`}
+        src={
+          img
+            ? `${baseImageUrl}${img}`
+            : `https://dummyimage.com/400x600/7d7d7d/fff.jpg&text=image+not+found`
+        }
         alt={title}
         onClick={handleImageClick}
       />
       <FilmTitle>{title}</FilmTitle>
+
       <Box display="flex" alignItems="center">
         <GenreType>{genreType || 'Action'}</GenreType>
         <Span>|</Span>
-        <ProdYear>{release.slice(0, 4) || '2025'}</ProdYear>
+        <ProdYear>{release ? release.slice(0, 4) : '2025'}</ProdYear>
       </Box>
+
       {aboutMovie && (
         <Modal onClick={closeModal}>
           <Box display="flex">
             <ModalImage
-              src={`${baseImageUrl}${img}`}
+              src={
+                img
+                  ? `${baseImageUrl}${img}`
+                  : `https://dummyimage.com/400x600/7d7d7d/fff.jpg&text=image+not+found`
+              }
               alt={title}
               onClick={handleImageClick}
             />
@@ -81,32 +93,32 @@ const MovieCard = ({ img, title, release, genre, id }) => {
               <ModalFilmTitle>{original_title}</ModalFilmTitle>
               <List>
                 <ModalItem>
-                  <VoteTitle>Vote / Votes</VoteTitle>
-                  <VoteAvarageText>{vote_average} </VoteAvarageText>
+                  <Title>Vote / Votes</Title>
+                  <AvarageText>{vote_average} </AvarageText>
                   <span>/</span>
-                  <VoteCountText>{vote_count}</VoteCountText>
+                  <Text>{vote_count}</Text>
                 </ModalItem>
                 <ModalItem>
-                  <VoteTitle>Popularity </VoteTitle>
-                  <VoteCountText>{popularity}</VoteCountText>
+                  <Title>Popularity </Title>
+                  <Text>{popularity}</Text>
                 </ModalItem>
                 <ModalItem>
-                  <VoteTitle>Original Title </VoteTitle>
-                  <VoteCountText>{original_title}</VoteCountText>
+                  <Title>Original Title </Title>
+                  <Text>{original_title}</Text>
                 </ModalItem>
                 <ModalItem>
-                  <VoteTitle>Genre</VoteTitle>
-                  {genres && (
-                    <VoteCountText>
-                      {genres.map(({ name }) => name)}
-                    </VoteCountText>
-                  )}
+                  <Title>Genre</Title>
+                  {genres && <Text>{genres.map(({ name }) => name)}</Text>}
                 </ModalItem>
-                <Box mt={20}>
-                  <AboutTitle>About</AboutTitle>
-                  <AboutText>{overview}</AboutText>
-                </Box>
               </List>
+              <Box mt={20} mb={20}>
+                <AboutTitle>About</AboutTitle>
+                <AboutText>{overview}</AboutText>
+              </Box>
+              <Box display="flex" justifyContent="center">
+                <Button color="#000">add to Watched</Button>
+                <Button color="#000">add to queue</Button>
+              </Box>
             </div>
           </Box>
         </Modal>

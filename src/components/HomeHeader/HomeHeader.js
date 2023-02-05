@@ -13,12 +13,16 @@ const Header = ({ onSubmit }) => {
     onSubmit(data);
   };
 
+  const logoClick = () => {
+    window.location.reload(true);
+  };
+
   return (
     <Layout>
       <Container>
         <Box as="nav">
           <Box display="flex" alignItems="center" mb={60}>
-            <Logo to="/home">
+            <Logo to="/home" onClick={logoClick}>
               <LogoIcon size={20} />
               Filmoteka
             </Logo>

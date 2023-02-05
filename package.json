@@ -4,6 +4,9 @@
   "private": true,
   "homepage": "https://yuriipanasiuk.github.io/react-groop-project/",
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.7",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
@@ -14,6 +17,8 @@
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.8.0",
     "react-scripts": "5.0.1",
+    "react-scroll": "^1.8.9",
+    "react-spinners": "^0.13.8",
     "styled-components": "^5.3.6",
     "styled-system": "^5.1.5",
     "web-vitals": "^2.1.3"
