@@ -1,4 +1,6 @@
 import { Formik } from 'formik';
+import { useDispatch } from 'react-redux';
+import { getQuery } from 'redux/moviesSlice';
 import {
   StyledForm,
   StyledFiels,
@@ -10,9 +12,11 @@ const initialValue = {
   text: '',
 };
 
-const SearchInput = ({ onSubmit }) => {
+const SearchInput = () => {
+  const dispatch = useDispatch();
+
   const handleSubmit = (data, { resetForm }) => {
-    onSubmit(data);
+    dispatch(getQuery(data.text));
     resetForm();
   };
 

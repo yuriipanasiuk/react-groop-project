@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import * as Scroll from 'react-scroll';
 import PaginationRounded from 'components/Pagination/Pagination';
+import { movies } from 'redux/selectors';
 
 import Box from 'components/Box';
 import Movies from 'components/Movies';
@@ -16,8 +18,10 @@ const Home = () => {
   const [searchVideos, setSearchideos] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState();
-  const [query, seQuery] = useState('');
+
   const [visibe, setVisible] = useState(false);
+
+  const { query } = useSelector(movies);
 
   const scroll = Scroll.animateScroll;
 
@@ -68,11 +72,6 @@ const Home = () => {
     }
   }, [currentPage, query, scroll]);
 
-  const getSeachValue = data => {
-    seQuery(data.text);
-    setCurrentPage();
-  };
-
   const getCurrentPage = page => {
     setCurrentPage(page);
   };
@@ -80,11 +79,10 @@ const Home = () => {
   const toTopButton = () => {
     scroll.scrollToTop();
   };
-  // console.log(currentPage);
 
   return (
     <div>
-      <Header onSubmit={getSeachValue} />
+      <Header />
 
       <Container>
         {trendMovies.length === 0 && (
